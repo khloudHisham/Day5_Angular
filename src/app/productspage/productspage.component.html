@@ -1,0 +1,28 @@
+<section id="product1" class="section-p1">
+    <div class="pro-container">
+        <div class="pro" *ngFor="let product of products">
+            <!-- <img src="assets/imgs/s2.jpg" alt=""> -->
+            <div class="des">
+                <h5>{{ product.id }}</h5> 
+                <h5>{{ product.name }}</h5> 
+                <div class="star">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                </div>
+                <i [routerLink]="['/products', product.id]"
+                    class="mx-1 fs-5 text-warning bi bi-eye-fill"></i>
+                
+                    <i [routerLink]="['/products', product.id, 'edit']"
+                     class="mx-1 fs-5 text-info bi bi-pencil-square"></i>
+                <i  (click)="deleteHandler(product.id)"
+                    class="mx-1 fs-5 text-danger  bi bi-trash3-fill"></i>
+                    
+                <h4>{{ product.price |currency}} </h4> 
+                <h4>{{ product.quantity }} Q</h4> 
+            </div>
+        </div>
+    </div>
+</section>
